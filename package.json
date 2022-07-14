@@ -1,0 +1,14 @@
+{
+  "name": "monio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Andres Gutierrez Ramirez <agutierrez.codes@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "jest": "^28.1.2"
+  }
+}
