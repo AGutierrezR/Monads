@@ -25,10 +25,14 @@ function Just(val) {
 
   // AKA: chain, bind
   function flatMap(fn) {
+    if (is(val)) {
+      return fn(val.fold((x) => x))
+    }
+
     return fn(val)
   }
 
-  // Same as flatMap but, 
+  // Same as flatMap but,
   // it doesn't expect a Just return
   function fold(fn) {
     return fn(val)

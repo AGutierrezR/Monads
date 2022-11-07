@@ -6,9 +6,11 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "execute": "node"
   },
   "devDependencies": {
+    "@types/jest": "^28.1.6",
     "jest": "^28.1.2"
   }
 }

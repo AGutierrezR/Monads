@@ -45,7 +45,15 @@ describe('Just', () => {
   })
 
   describe('#flatMap', () => {
-    it(`Should return just with 'john' as a value`, () => {
+    it(`Should return Just with 'john' as a value if has inner Just`, () => {
+      expect(
+        Just(Just({ name: 'john' }))
+          .flatMap((person) => Just(pluck('name', person)))
+          ._inspect()
+      ).toEqual(Just('john')._inspect())
+    })
+
+    it(`Should return Just with 'john' as a value`, () => {
       expect(
         Just({ name: 'john' })
           .flatMap((person) => Just(pluck('name', person)))

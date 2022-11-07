@@ -27,9 +27,7 @@ describe('Nothing', () => {
   describe('#flatMap', () => {
     it(`Should perform no operation`, () => {
       expect(
-        Nothing({ name: 'john' })
-          .flatMap(pluck('name'))
-          ._inspect()
+        Nothing({ name: 'john' }).flatMap(pluck('name'))._inspect()
       ).toEqual(Nothing()._inspect())
     })
   })
@@ -37,6 +35,10 @@ describe('Nothing', () => {
   describe('#fold', () => {
     it('fold(identity) produces undefined', () => {
       expect(Nothing().fold(identity)).toBe(undefined)
+    })
+
+    it('fold(() => 3) produce 3', () => {
+      expect(Nothing().fold(() => 3)).toBe(3)
     })
   })
 

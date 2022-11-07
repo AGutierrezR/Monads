@@ -1,7 +1,7 @@
 'use strict'
 
-const Just = require('src/just')
-const Nothing = require('src/nothing')
+const Just = require('./just')
+const Nothing = require('./nothing')
 const { identity, isFunction } = require('./lib/utils')
 
 const BRAND = {}

@@ -85,15 +85,21 @@ describe('Maybe', () => {
       ).toEqual(Maybe.Just('john')._inspect())
     })
 
-    it.todo('Should return a Nothing monad if operation return Nothing')
-
     it(`Should perform no operation on a Maybe:Nothing monad`, () => {
       expect(Maybe.Nothing().flatMap(operation)._inspect()).toEqual(
         Maybe.Nothing()._inspect()
       )
     })
 
-    it('Should perform operation until a Maybe:Nothing monad is hit', () => {
+    it('Should return a Nothing monad if operation return Nothing', () => {
+      expect(
+        Maybe.of(1)
+          .flatMap(() => Maybe.from(undefined))
+          ._inspect()
+      ).toEqual(Maybe.Nothing()._inspect())
+    })
+
+    it('Should perform operations until a Maybe:Nothing monad is hit', () => {
       expect(
         Maybe.of(1)
           .flatMap(operation)

@@ -6,9 +6,22 @@ const pluck = (key, obj) => {
   return obj[key]
 }
 
+const EMPTY_FUNC = () => {}
+
+async function safeAwait(pr) {
+  try {
+    return await pr
+  } catch (err) {
+    return err
+  }
+}
+
 module.exports = {
   identity,
   inc,
   double,
   pluck,
+  safeAwait,
+  EMPTY_FUNC,
+  noop: EMPTY_FUNC,
 }
